@@ -17,14 +17,11 @@ try:
         swipt = GPIO.input(switch_pin)
 
         if swipt == False:  # 스위치 눌렀을 때
-            servo.ChangeDutyCycle(3)
-            time.sleep(0.00001)
             servo.ChangeDutyCycle(12)
-            time.sleep(0.00001)
+            time.sleep(0.1)
+            servo.ChangeDutyCycle(3)
+            time.sleep(0.1)
             print('i wish')
-        # else:
-        #     print('?')
-        #     servo.stop()
         
 except KeyboardInterrupt:
     servo.stop()
